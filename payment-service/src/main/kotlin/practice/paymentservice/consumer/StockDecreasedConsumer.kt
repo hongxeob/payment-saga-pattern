@@ -12,7 +12,7 @@ class StockDecreasedConsumer(
 ) {
     private val logger = LoggerFactory.getLogger(StockDecreasedConsumer::class.java)
 
-    @KafkaListener(topics = ["\${stock-decrease}"], groupId = "group-01")
+    @KafkaListener(topics = ["stock-decrease"], groupId = "group-01")
     fun payment(orderId: Long) {
         try {
             errorPerHalf()
